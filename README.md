@@ -14,6 +14,7 @@ Progression: min 42:45
 - [x] Attach database to UI
 - [x] Add authentication (w/ clerk)
 - [ ] Add image upload
+- [ ] "Taint" (server-only)
 - [ ] Error management (w/ Sentry)
 - [ ] Routing/image page (next parallel route)
 - [ ] Delete button (w/ Server Actions)
