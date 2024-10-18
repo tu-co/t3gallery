@@ -12,7 +12,7 @@ Progression: min 42:45
 - [x] Tidy built up process
 - [x] Actually set up a database (vercel pstgres)
 - [x] Attach database to UI
-- [ ] Add authentication (w/ clerk)
+- [x] Add authentication (w/ clerk)
 - [ ] Add image upload
 - [ ] Error management (w/ Sentry)
 - [ ] Routing/image page (next parallel route)
