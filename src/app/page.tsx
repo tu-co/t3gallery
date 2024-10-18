@@ -1,15 +1,21 @@
-export default function HomePage() {
-  const mockUrls = [
-    "https://utfs.io/f/QfvkUpnOvjFEEyhaC1SepS3DrczR6Fu2CZfXMxl7aoT1QGyg",
-    "https://utfs.io/f/QfvkUpnOvjFEEyhaC1SepS3DrczR6Fu2CZfXMxl7aoT1QGyg",
-    "https://utfs.io/f/QfvkUpnOvjFERkPavnKC5DkhAGK1Ne9OXy6wclgPf0uqSEvI",
-    "https://utfs.io/f/QfvkUpnOvjFERkPavnKC5DkhAGK1Ne9OXy6wclgPf0uqSEvI",
-  ];
+import { db } from "@/server/db";
 
-  const mockImages = mockUrls.map((url, index) => ({
-    id: index + 1,
-    url,
-  }));
+const mockUrls = [
+  "https://utfs.io/f/QfvkUpnOvjFEEyhaC1SepS3DrczR6Fu2CZfXMxl7aoT1QGyg",
+  "https://utfs.io/f/QfvkUpnOvjFEEyhaC1SepS3DrczR6Fu2CZfXMxl7aoT1QGyg",
+  "https://utfs.io/f/QfvkUpnOvjFERkPavnKC5DkhAGK1Ne9OXy6wclgPf0uqSEvI",
+  "https://utfs.io/f/QfvkUpnOvjFERkPavnKC5DkhAGK1Ne9OXy6wclgPf0uqSEvI",
+];
+
+const mockImages = mockUrls.map((url, index) => ({
+  id: index + 1,
+  url,
+}));
+
+export default async function HomePage() {
+  const posts = await db.query.posts.findMany();
+
+  console.log({ posts });
 
   return (
     <main className="">
