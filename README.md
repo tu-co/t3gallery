@@ -3,7 +3,7 @@
 ## Description:
 
 Tutorial: https://www.youtube.com/watch?v=d5x0JCZbAJs&t=225s
-Progression: min 2:12:22
+Progression: min 2:13:34
 
 ## TODO:
 
