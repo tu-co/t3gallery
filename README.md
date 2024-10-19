@@ -16,7 +16,7 @@ Progression: min 54:41
 - [x] Add image upload
 - [x] "Taint" (server-only)
 - [x] Use Next/Image component
-- [ ] Error management (w/ Sentry)
+- [x] Error management (w/ Sentry)
 - [ ] Routing/image page (next parallel route)
 - [ ] Delete button (w/ Server Actions)
 - [ ] Analytics (w/ posthog)
