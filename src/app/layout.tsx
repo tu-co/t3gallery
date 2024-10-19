@@ -21,7 +21,11 @@ const inter = Inter({
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  modal,
+}: Readonly<{
+  children: React.ReactNode;
+  modal: React.ReactNode;
+}>) {
   return (
     <ClerkProvider>
       <html lang="en" className={inter.className}>
@@ -37,6 +41,8 @@ export default function RootLayout({
           />
           <TopNav />
           {children}
+          {modal}
+          <div id="modal-root" />
         </body>
       </html>
     </ClerkProvider>
