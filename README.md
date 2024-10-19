@@ -17,7 +17,8 @@ Progression: min 1:32:18
 - [x] "Taint" (server-only)
 - [x] Use Next/Image component
 - [x] Error management (w/ Sentry)
-- [ ] Routing/image page (next parallel route)
+- [x] Routing/image page (next parallel route)
+- [ ] Update upload button to be less cringe
 - [ ] Delete button (w/ Server Actions)
 - [ ] Analytics (w/ posthog)
 - [ ] Ratelimitin (w/ upstash)
