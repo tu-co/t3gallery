@@ -1,4 +1,6 @@
 import { getImageById } from "@/server/db/queries";
+import { Modal } from "./modal";
+import FullImagePage from "@/components/full-image-page";
 
 export default async function ImgModal({
   params: { id: photoId },
@@ -10,12 +12,8 @@ export default async function ImgModal({
 
   const image = await getImageById(idAsNumber);
   return (
-    <div className="h-64 w-96 overflow-hidden">
-      <img
-        src={image.url}
-        alt={image.name}
-        className="h-full w-full object-cover"
-      />
-    </div>
+    <Modal>
+      <FullImagePage id={image.id} />
+    </Modal>
   );
 }

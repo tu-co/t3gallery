@@ -1,7 +1,12 @@
-export default function ImgModal({
-  params: { id: photoId },
+import FullImagePage from "@/components/full-image-page";
+
+export default function ImgByIdPage({
+  params: { id },
 }: {
   params: { id: string };
 }) {
-  return <div>{photoId}</div>;
+  const idAsNumber = Number(id);
+  if (isNaN(idAsNumber)) throw new Error("Invalid image id");
+
+  return <FullImagePage id={idAsNumber} />;
 }
