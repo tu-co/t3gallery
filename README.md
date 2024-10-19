@@ -14,7 +14,8 @@ Progression: min 54:41
 - [x] Attach database to UI
 - [x] Add authentication (w/ clerk)
 - [x] Add image upload
-- [ ] "Taint" (server-only)
+- [x] "Taint" (server-only)
+- [x] Use Next/Image component
 - [ ] Error management (w/ Sentry)
 - [ ] Routing/image page (next parallel route)
 - [ ] Delete button (w/ Server Actions)
