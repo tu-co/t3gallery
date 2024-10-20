@@ -1,6 +1,6 @@
 import { getImageById } from "@/server/db/queries";
 import { Modal } from "./modal";
-import FullImagePage from "@/components/full-image-page";
+import FullImagePage from "@/components/common/full-image-page";
 
 export default async function ImgModal({
   params: { id: photoId },
