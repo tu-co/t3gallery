@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useUploadThing } from "@/utils/uploadthing";
+import { toast } from "sonner";
 // import {LoadingSpinner} from "./loading-spinner";
 
 type Input = Parameters<typeof useUploadThing>;
@@ -48,10 +49,19 @@ function SVGUploadButton() {
 }
 
 export function SimpleUploadButton() {
+  const TOAST_ID = "uploading";
+
   const router = useRouter();
+
   const { inputProps } = useUploadThingInputProps("imageUploader", {
+    onUploadBegin: () => {
+      toast("Uploading...", {
+        id: TOAST_ID,
+      });
+    },
     onClientUploadComplete: () => {
       router.refresh();
+      toast.dismiss(TOAST_ID);
     },
   });
 
