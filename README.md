@@ -3,7 +3,7 @@
 ## Description:
 
 Tutorial: https://www.youtube.com/watch?v=d5x0JCZbAJs&t=225s
-Progression: min 2:13:34
+Progression: min 2:38:16
 
 ## TODO:
 
@@ -19,7 +19,7 @@ Progression: min 2:13:34
 - [x] Error management (w/ Sentry)
 - [x] Routing/image page (next parallel route)
 - [x] Update upload button to be less cringe
-- [ ] Add toast component (w/ ui.shadcn)
-- [ ] Delete button (w/ Server Actions)
+- [x] Add toast component (w/ ui.shadcn)
 - [ ] Analytics (w/ posthog)
+- [ ] Delete button (w/ Server Actions)
 - [ ] Ratelimitin (w/ upstash)
