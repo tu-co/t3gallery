@@ -1,3 +1,4 @@
+import "server-only";
 import { env } from "@/env";
 import { PostHog } from "posthog-node";
 
