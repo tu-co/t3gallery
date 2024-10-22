@@ -99,7 +99,7 @@ function SVGError() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
+      fill="none"
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -142,7 +142,7 @@ export function SimpleUploadButton() {
       toast.error(
         <div className="flex items-center gap-2 text-red-500">
           <SVGError />
-          <span className="text-lg">Upload failed!</span>
+          <span className="text-lg">Upload failed</span>
         </div>,
         {
           id: TOAST_ID,
@@ -155,7 +155,7 @@ export function SimpleUploadButton() {
       toast.success(
         <div className="flex items-center gap-2 text-green-500">
           <SVGCheck />
-          <span className="text-lg">Upload completed!</span>
+          <span className="text-lg">Upload completed</span>
         </div>,
         {
           id: TOAST_ID,
