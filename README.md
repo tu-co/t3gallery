@@ -21,5 +21,5 @@ Progression: min 2:38:16
 - [x] Update upload button to be less cringe
 - [x] Add toast component (w/ ui.shadcn)
 - [x] Analytics (w/ posthog)
-- [ ] Delete button (w/ Server Actions)
-- [ ] Ratelimitin (w/ upstash)
+- [x] Delete button (w/ Server Actions)
+- [x] Ratelimit (w/ upstash)
