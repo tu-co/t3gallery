@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { useUploadThing } from "@/utils/uploadthing";
 import { toast } from "sonner";
 import { usePostHog } from "posthog-js/react";
+import { S } from "node_modules/@upstash/redis/zmscore-Dc6Llqgr.mjs";
 
 type Input = Parameters<typeof useUploadThing>;
 
@@ -55,7 +56,7 @@ function SVGLoadingSpinner() {
       height="24"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      fill="white"
+      fill="currentColor"
     >
       <path
         d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
@@ -72,7 +73,7 @@ function SVGLoadingSpinner() {
 function SVGCheck() {
   return (
     <svg
-      fill="white"
+      fill="currentColor"
       version="1.1"
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"
@@ -94,6 +95,27 @@ function SVGCheck() {
   );
 }
 
+function SVGError() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="size-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+      />
+    </svg>
+  );
+}
+
 export function SimpleUploadButton() {
   const TOAST_ID = "uploading";
 
@@ -105,7 +127,7 @@ export function SimpleUploadButton() {
     onUploadBegin: () => {
       posthog.capture("upload_begin");
       toast(
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-white">
           <SVGLoadingSpinner />
           <span className="text-lg">Uploading...</span>
         </div>,
@@ -115,10 +137,23 @@ export function SimpleUploadButton() {
         },
       );
     },
+    onUploadError: (err) => {
+      posthog.capture("upload_error", err);
+      toast.error(
+        <div className="flex items-center gap-2 text-red-500">
+          <SVGError />
+          <span className="text-lg">Upload failed!</span>
+        </div>,
+        {
+          id: TOAST_ID,
+          duration: 2000,
+        },
+      );
+    },
     onClientUploadComplete: () => {
       router.refresh();
       toast.success(
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-green-500">
           <SVGCheck />
           <span className="text-lg">Upload completed!</span>
         </div>,
